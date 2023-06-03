@@ -1,26 +1,19 @@
 package com.jsp.person.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
-public class Person {
-	
+public class PanCard {
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String address;
+	private String add;
 	private long phno;
-	
-	@OneToOne
-	private PanCard card;
-	public PanCard getCard() {
-		return card;
-	}
-	public void setCard(PanCard card) {
-		this.card = card;
-	}
 	public int getId() {
 		return id;
 	}
@@ -33,11 +26,11 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
+	public String getAdd() {
+		return add;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAdd(String add) {
+		this.add = add;
 	}
 	public long getPhno() {
 		return phno;
@@ -47,11 +40,8 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", address=" + address + ", phno=" + phno + ", card=" + card
-				+ "]";
+		return "PanCard [id=" + id + ", name=" + name + ", add=" + add + ", phno=" + phno + "]";
 	}
 	
 	
-	
-
 }
